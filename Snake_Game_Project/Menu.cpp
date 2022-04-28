@@ -292,6 +292,7 @@ void mainMenu()
 		{
 			char c = _getch();
 			if (c == 'w' || c == 'W') {
+				PlaySound(TEXT("menumovement.wav"), NULL, SND_ASYNC);
 				if (inMainMenu) {
 					if (idMainMenu > 0) idMainMenu--;
 					else idMainMenu = 5;
@@ -309,6 +310,7 @@ void mainMenu()
 				}
 			}
 			else if (c == 's' || c == 'S') {
+				PlaySound(TEXT("menumovement.wav"), NULL, SND_ASYNC);
 				if (inMainMenu) {
 					if (idMainMenu < 5) idMainMenu++;
 					else idMainMenu = 0;
@@ -326,6 +328,7 @@ void mainMenu()
 				}
 			}
 			else if (c == 13) {
+				PlaySound(TEXT("GameMenuSelect.wav"), NULL, SND_SYNC);
 				if (inMainMenu) {
 					inMainMenu = false;
 					if (idMainMenu == 0) isPlay = true;

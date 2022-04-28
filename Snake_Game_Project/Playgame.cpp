@@ -288,7 +288,9 @@ void moveDown() {
 	{
 		if (snake[0].x == food[foodIndex].x && snake[0].y + 1 == food[foodIndex].y)
 		{
+			//PlaySound(TEXT("eating.wav"), NULL,| SND_SYNC);
 			eatFood();
+
 		}
 		Point previousTail = { snake[snake.size() - 1].x, snake[snake.size() - 1].y };
 		for (int i = snake.size() - 1; i > 0; i--)
@@ -352,8 +354,8 @@ bool crashGate() {
 
 void processDead() {
 	isAlive = false;
+	PlaySound(NULL, NULL, SND_FILENAME | SND_SYNC);//Thêm âm thanh
 	blinkedSnake();
-	/*PlaySound();*/
 }
 
 void drawSnake() {
@@ -495,6 +497,7 @@ void threadFunction() {
 
 // effect when snake dead
 void blinkedSnake() {
+	PlaySound(TEXT("gameover3.wav"), NULL, SND_FILENAME | SND_ASYNC);//Thêm âm thanh
 	for (int i = 0; i < 5; i++) {
 		Sleep(100);
 		for (int i = 0; i < snake.size(); i++)
@@ -509,6 +512,8 @@ void blinkedSnake() {
 			cout << " ";
 		}
 	}
+	Sleep(500);
+	PlaySound(NULL, NULL, SND_FILENAME | SND_ASYNC);//Thêm âm thanh
 }
 // check player's name condition
 bool isAlreadyExistedFileName(string fileName) {
@@ -745,6 +750,8 @@ void startGame() {
 	resetGame();
 	drawBoard(0);
 	isAlive = true;
+	PlaySound(TEXT("countdown321toplay.wav"), NULL, SND_FILENAME | SND_SYNC);
+	PlaySound(TEXT("background2.wav"), NULL, SND_FILENAME| SND_ASYNC|SND_LOOP);
 	// display sound and effect
 }
 void updateSelecting(int c) {

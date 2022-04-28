@@ -1,0 +1,18 @@
+-Xử lý âm thanh-
+
+
+-Nhạc nền menu
+-Nhạc nền trong game
+-Khi ăn thức ăn 
+-di chuyển up down trong menu selection
+-bấm chọn trong menu 
+-Đếm countdown 3 2 1 bắt đầu chơi 
+-Game over
+-Rắn chạm chướng ngại vật
+-Chuyển map
+
+
+
+possessDEAD
+startgame
+mainmenu 
